@@ -44,6 +44,7 @@ class ParkingManagerGUI:
         self.root.geometry(f"{self.WINDOW_WIDTH}x{self.WINDOW_HEIGHT}")
         self.root.resizable(0, 0)
         self.root.title("Parking Lot Manager (Improved)")
+        self.root.config(bg="white")
         
         # Business logic layer (no longer global)
         self._parking_lot = ParkingLot()
@@ -69,7 +70,9 @@ class ParkingManagerGUI:
         self._output_text = tk.Text(
             self.root,
             width=self.TEXT_FIELD_WIDTH,
-            height=self.TEXT_FIELD_HEIGHT
+            height=self.TEXT_FIELD_HEIGHT,
+            bg="white",
+            fg="black"
         )
         
         # Build GUI
@@ -81,7 +84,9 @@ class ParkingManagerGUI:
         title_label = tk.Label(
             self.root,
             text="Parking Lot Manager",
-            font=self.FONT_TITLE
+            font=self.FONT_TITLE,
+            bg="white",
+            fg="black"
         )
         title_label.grid(row=0, column=0, padx=10, columnspan=4, pady=10)
         
@@ -89,41 +94,49 @@ class ParkingManagerGUI:
         creation_label = tk.Label(
             self.root,
             text="Lot Creation",
-            font=self.FONT_HEADING
+            font=self.FONT_HEADING,
+            bg="white",
+            fg="black"
         )
         creation_label.grid(row=1, column=0, padx=10, columnspan=4)
         
         # Regular slots input
-        tk.Label(self.root, text="Regular Slots", font=self.FONT_NORMAL).grid(
+        tk.Label(self.root, text="Regular Slots", font=self.FONT_NORMAL, bg="white", fg="black").grid(
             row=2, column=0, padx=5, sticky="w"
         )
         tk.Entry(
             self.root,
             textvariable=self._num_regular_slots,
             width=6,
-            font=self.FONT_NORMAL
+            font=self.FONT_NORMAL,
+            bg="white",
+            fg="black"
         ).grid(row=2, column=1, padx=4, pady=2)
         
         # Electric slots input
-        tk.Label(self.root, text="Electric Slots", font=self.FONT_NORMAL).grid(
+        tk.Label(self.root, text="Electric Slots", font=self.FONT_NORMAL, bg="white", fg="black").grid(
             row=2, column=2, padx=5, sticky="w"
         )
         tk.Entry(
             self.root,
             textvariable=self._num_electric_slots,
             width=6,
-            font=self.FONT_NORMAL
+            font=self.FONT_NORMAL,
+            bg="white",
+            fg="black"
         ).grid(row=2, column=3, padx=4, pady=2)
         
         # Floor level input
-        tk.Label(self.root, text="Floor Level", font=self.FONT_NORMAL).grid(
+        tk.Label(self.root, text="Floor Level", font=self.FONT_NORMAL, bg="white", fg="black").grid(
             row=3, column=0, padx=5, sticky="w"
         )
         tk.Entry(
             self.root,
             textvariable=self._floor_level,
             width=6,
-            font=self.FONT_NORMAL
+            font=self.FONT_NORMAL,
+            bg="white",
+            fg="black"
         ).grid(row=3, column=1, padx=4, pady=4)
         
         # Create parking lot button
@@ -132,9 +145,6 @@ class ParkingManagerGUI:
             command=self._on_create_lot,
             text="Create Parking Lot",
             font=self.FONT_NORMAL,
-            bg="lightblue",
-            fg="black",
-            activebackground="teal",
             padx=5,
             pady=5
         ).grid(row=4, column=0, padx=4, pady=4)
@@ -143,49 +153,59 @@ class ParkingManagerGUI:
         parking_label = tk.Label(
             self.root,
             text="Vehicle Parking",
-            font=self.FONT_HEADING
+            font=self.FONT_HEADING,
+            bg="white",
+            fg="black"
         )
         parking_label.grid(row=5, column=0, padx=10, columnspan=4)
         
         # Vehicle details inputs
-        tk.Label(self.root, text="Make", font=self.FONT_NORMAL).grid(
+        tk.Label(self.root, text="Make", font=self.FONT_NORMAL, bg="white", fg="black").grid(
             row=6, column=0, padx=5, sticky="w"
         )
         tk.Entry(
             self.root,
             textvariable=self._vehicle_make,
             width=12,
-            font=self.FONT_NORMAL
+            font=self.FONT_NORMAL,
+            bg="white",
+            fg="black"
         ).grid(row=6, column=1, padx=4, pady=4)
         
-        tk.Label(self.root, text="Model", font=self.FONT_NORMAL).grid(
+        tk.Label(self.root, text="Model", font=self.FONT_NORMAL, bg="white", fg="black").grid(
             row=6, column=2, padx=5, sticky="w"
         )
         tk.Entry(
             self.root,
             textvariable=self._vehicle_model,
             width=12,
-            font=self.FONT_NORMAL
+            font=self.FONT_NORMAL,
+            bg="white",
+            fg="black"
         ).grid(row=6, column=3, padx=4, pady=4)
         
-        tk.Label(self.root, text="Color", font=self.FONT_NORMAL).grid(
+        tk.Label(self.root, text="Color", font=self.FONT_NORMAL, bg="white", fg="black").grid(
             row=7, column=0, padx=5, sticky="w"
         )
         tk.Entry(
             self.root,
             textvariable=self._vehicle_color,
             width=12,
-            font=self.FONT_NORMAL
+            font=self.FONT_NORMAL,
+            bg="white",
+            fg="black"
         ).grid(row=7, column=1, padx=4, pady=4)
         
-        tk.Label(self.root, text="Registration #", font=self.FONT_NORMAL).grid(
+        tk.Label(self.root, text="Registration #", font=self.FONT_NORMAL, bg="white", fg="black").grid(
             row=7, column=2, padx=5, sticky="w"
         )
         tk.Entry(
             self.root,
             textvariable=self._vehicle_registration,
             width=12,
-            font=self.FONT_NORMAL
+            font=self.FONT_NORMAL,
+            bg="white",
+            fg="black"
         ).grid(row=7, column=3, padx=4, pady=4)
         
         # Checkboxes (replaces magic boolean values 0/1)
@@ -193,14 +213,18 @@ class ParkingManagerGUI:
             self.root,
             text="Electric Vehicle",
             variable=self._is_electric,
-            font=self.FONT_NORMAL
+            font=self.FONT_NORMAL,
+            bg="white",
+            fg="black"
         ).grid(column=0, row=8, padx=4, pady=4, sticky="w")
         
         tk.Checkbutton(
             self.root,
             text="Motorcycle",
             variable=self._is_motorcycle,
-            font=self.FONT_NORMAL
+            font=self.FONT_NORMAL,
+            bg="white",
+            fg="black"
         ).grid(column=1, row=8, padx=4, pady=4, sticky="w")
         
         # Park vehicle button
@@ -209,9 +233,6 @@ class ParkingManagerGUI:
             command=self._on_park_vehicle,
             text="Park Vehicle",
             font=self.FONT_NORMAL,
-            bg="lightblue",
-            fg="black",
-            activebackground="teal",
             padx=5,
             pady=5
         ).grid(column=0, row=9, padx=4, pady=4)
@@ -220,18 +241,22 @@ class ParkingManagerGUI:
         removal_label = tk.Label(
             self.root,
             text="Vehicle Removal",
-            font=self.FONT_HEADING
+            font=self.FONT_HEADING,
+            bg="white",
+            fg="black"
         )
         removal_label.grid(row=10, column=0, padx=10, columnspan=4)
         
-        tk.Label(self.root, text="Slot #", font=self.FONT_NORMAL).grid(
+        tk.Label(self.root, text="Slot #", font=self.FONT_NORMAL, bg="white", fg="black").grid(
             row=11, column=0, padx=5, sticky="w"
         )
         tk.Entry(
             self.root,
             textvariable=self._remove_slot_number,
             width=12,
-            font=self.FONT_NORMAL
+            font=self.FONT_NORMAL,
+            bg="white",
+            fg="black"
         ).grid(row=11, column=1, padx=4, pady=4)
         
         # Remove vehicle button
@@ -240,9 +265,6 @@ class ParkingManagerGUI:
             command=self._on_remove_vehicle,
             text="Remove Vehicle",
             font=self.FONT_NORMAL,
-            bg="lightyellow",
-            fg="black",
-            activebackground="orange",
             padx=5,
             pady=5
         ).grid(column=2, row=11, padx=4, pady=4)
@@ -251,7 +273,9 @@ class ParkingManagerGUI:
         search_label = tk.Label(
             self.root,
             text="Vehicle Search",
-            font=self.FONT_HEADING
+            font=self.FONT_HEADING,
+            bg="white",
+            fg="black"
         )
         search_label.grid(row=12, column=0, padx=10, columnspan=4)
         
@@ -260,9 +284,6 @@ class ParkingManagerGUI:
             command=self._on_search_by_registration,
             text="Find by Registration",
             font=self.FONT_NORMAL,
-            bg="lightgreen",
-            fg="black",
-            activebackground="darkgreen",
             padx=5,
             pady=5
         ).grid(column=0, row=13, padx=4, pady=4)
@@ -271,7 +292,9 @@ class ParkingManagerGUI:
             self.root,
             textvariable=self._search_registration,
             width=12,
-            font=self.FONT_NORMAL
+            font=self.FONT_NORMAL,
+            bg="white",
+            fg="black"
         ).grid(row=13, column=1, padx=4, pady=4)
         
         tk.Button(
@@ -279,9 +302,6 @@ class ParkingManagerGUI:
             command=self._on_search_by_color,
             text="Find by Color",
             font=self.FONT_NORMAL,
-            bg="lightgreen",
-            fg="black",
-            activebackground="darkgreen",
             padx=5,
             pady=5
         ).grid(column=2, row=13, padx=4, pady=4)
@@ -290,14 +310,18 @@ class ParkingManagerGUI:
             self.root,
             textvariable=self._search_color,
             width=12,
-            font=self.FONT_NORMAL
+            font=self.FONT_NORMAL,
+            bg="white",
+            fg="black"
         ).grid(row=13, column=3, padx=4, pady=4)
         
         # ==================== STATUS SECTION ====================
         status_label = tk.Label(
             self.root,
             text="Status",
-            font=self.FONT_HEADING
+            font=self.FONT_HEADING,
+            bg="white",
+            fg="black"
         )
         status_label.grid(row=14, column=0, padx=10, columnspan=4)
         
@@ -306,9 +330,6 @@ class ParkingManagerGUI:
             command=self._on_show_status,
             text="Show All Vehicles",
             font=self.FONT_NORMAL,
-            bg="PaleGreen1",
-            fg="black",
-            activebackground="PaleGreen3",
             padx=5,
             pady=5
         ).grid(column=0, row=15, padx=4, pady=4)
@@ -318,9 +339,6 @@ class ParkingManagerGUI:
             command=self._on_show_charge_status,
             text="EV Charge Status",
             font=self.FONT_NORMAL,
-            bg="PaleGreen1",
-            fg="black",
-            activebackground="PaleGreen3",
             padx=5,
             pady=5
         ).grid(column=2, row=15, padx=4, pady=4)
@@ -333,9 +351,17 @@ class ParkingManagerGUI:
     def _on_create_lot(self):
         """Handle parking lot creation."""
         try:
-            regular_slots = int(self._num_regular_slots.get())
-            electric_slots = int(self._num_electric_slots.get())
-            level = int(self._floor_level.get())
+            regular_str = self._num_regular_slots.get().strip()
+            electric_str = self._num_electric_slots.get().strip()
+            level_str = self._floor_level.get().strip()
+            
+            if not all([regular_str, electric_str, level_str]):
+                messagebox.showwarning("Error", "All lot creation fields are required")
+                return
+            
+            regular_slots = int(regular_str)
+            electric_slots = int(electric_str)
+            level = int(level_str)
             
             self._parking_lot.initialize(regular_slots, electric_slots, level)
             
