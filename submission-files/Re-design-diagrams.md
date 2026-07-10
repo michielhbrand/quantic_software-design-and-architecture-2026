@@ -1,3 +1,21 @@
+<div align="center">
+
+![Quantic Logo](../quantic-logo-only.svg)
+
+# Software Design & Architecture Project
+
+**Redesigned Architecture - UML Diagrams**
+
+---
+
+**Student:** Michiel Brand
+**Student Number:** Q173978195964068764
+**Date:** 26 October 2025
+
+---
+
+</div>
+
 # Redesigned Architecture - UML Diagrams
 
 This document contains UML diagrams representing the refactored parking lot manager architecture after applying design patterns and best practices.

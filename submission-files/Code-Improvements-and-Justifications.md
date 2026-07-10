@@ -1,3 +1,21 @@
+<div align="center">
+
+![Quantic Logo](../quantic-logo-only.svg)
+
+# Software Design & Architecture Project
+
+**Code Improvements and Justifications**
+
+---
+
+**Student:** Michiel Brand
+**Student Number:** Q173978195964068764
+**Date:** 26 October 2025
+
+---
+
+</div>
+
 # Code Improvements Document - Parking Lot Manager
 
 ## Executive Summary

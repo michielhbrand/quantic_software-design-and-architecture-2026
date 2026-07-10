@@ -1,3 +1,21 @@
+<div align="center">
+
+![Quantic Logo](../quantic-logo-only.svg)
+
+# Software Design & Architecture Project
+
+**Domain-Driven Design & Microservices Report**
+
+---
+
+**Student:** Michiel Brand
+**Student Number:** Q173978195964068764
+**Date:** 26 October 2025
+
+---
+
+</div>
+
 # System Expansion: EasyParkPlus Multi-Facility Architecture with DDD and Microservices
 
 ## Executive Summary
